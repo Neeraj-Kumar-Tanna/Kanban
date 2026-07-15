@@ -14,8 +14,9 @@ html , body{
     /* Background colors */
     --bg-color : black;
     --bg-task-delete : red;
-    --bg-task-column : rgb(68, 60, 60);
-    --bg-task : rgb(41, 39, 39);
+    --bg-task-column : rgb(41, 39, 39);
+    
+    --bg-task : rgb(68, 60, 60);
 
     /* text color */
     --font-color : rgb(237, 234, 234);
@@ -43,7 +44,7 @@ html , body{
     --br-xxxl : 30px;
 
     /* gap */
-    --gap-section:10px;
+    --gap-section:15px;
     --gap-tasks : 5px;
 }
 
@@ -111,7 +112,6 @@ section{
     padding: var(--task-padding);
     background-color: var(--bg-task);
     border-radius: var(--br-task);
-
     display: flex;
     flex-direction: column;
 }
@@ -126,4 +126,10 @@ section{
     cursor: pointer;
     font-weight: 650;
     align-self: flex-end;
+}
+
+.on-hover{
+    scale: 1.03;
+    border: 2px dashed white;
+    transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
