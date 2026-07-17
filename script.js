@@ -4,6 +4,8 @@ const completed = document.querySelector("#completed");
 
 let dragedEle = null;
 
+
+
 let tasks = document.querySelectorAll(".task");
 
 tasks.forEach((task) => {
@@ -38,11 +40,21 @@ function addingDragEvents(clm){
 
     clm.addEventListener("drop" , (e)=>{
         e.preventDefault();
-        clm.appendChild(dragedEle);
+        clm.querySelector(".bottom").appendChild(dragedEle);
         clm.classList.remove("on-hover");
+        counting();
     })
 }
+
+function counting(){
+    let clm = document.querySelectorAll(".task-column");
+    clm.forEach((cl)=>{
+        cl.querySelector(".heading").querySelector("div").innerText = cl.querySelector(".bottom").childElementCount;
+    });
+};
+counting();
 
 addingDragEvents(todo);
 addingDragEvents(progress);
 addingDragEvents(completed);
+
