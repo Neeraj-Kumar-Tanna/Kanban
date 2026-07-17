@@ -2,18 +2,41 @@ const todo = document.querySelector("#todo");
 const progress = document.querySelector("#progress");
 const completed = document.querySelector("#completed");
 
+let dragedEle = null;
+
 let tasks = document.querySelectorAll(".task");
 
-function addingDragEvents(task){
-    task.addEventListener("dragenter", (e)=>{
+tasks.forEach((task) => {
+    task.addEventListener("dragstart" , ()=>{
+        dragedEle = task;
+        console.log(dragedEle);
+        dragedEle.style.opacity = "1";
+    });
+
+    
+
+});
+
+function addingDragEvents(clm){
+    clm.addEventListener("dragenter", (e)=>{
         e.preventDefault();
         
-        task.classList.add("on-hover");
+        clm.classList.add("on-hover");
     }); 
 
-    task.addEventListener("dragleave" , (e)=>{
+    clm.addEventListener("dragleave" , (e)=>{
         e.preventDefault();
-        task.classList.remove("on-hover");
+        clm.classList.remove("on-hover");
+    });
+
+    clm.addEventListener("dragover", (e)=>{
+        e.preventDefault();
+    })
+
+    clm.addEventListener("drop" , (e)=>{
+        e.preventDefault();
+        clm.appendChild(dragedEle);
+        clm.classList.remove("on-hover");
     })
 }
 
