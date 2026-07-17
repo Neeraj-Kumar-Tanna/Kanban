@@ -13,7 +13,10 @@ tasks.forEach((task) => {
         dragedEle.style.opacity = "1";
     });
 
-    
+    task.querySelector("button").addEventListener("click" , ()=>{
+        task.parentElement.removeChild(task);
+        console.log("clicked");
+    })
 
 });
 
