@@ -61,6 +61,53 @@ main{
     
 }
 
+#newtaskDetOut{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    /* background-color: aqua; */
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .hide{
+    display: none;
+} */
+
+#newtaskDetOut.hide{
+    display: none;
+}
+
+#newtaskDetIn{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #514d4d;
+    padding: 30px 15px 30px 15px;
+    border-radius: 10px;
+
+    input{
+        padding: 5px 10px 5px 10px;
+        border-radius: 10px;
+        border: none;
+    }
+
+    button{
+        padding: var(--padding-s) var(--padding-l);
+        border-radius: var(--btn-radius);
+        border: none;
+        background-color: rgba(233, 53, 53, 0.78);
+        cursor: pointer;
+        font-weight: 700;
+    }
+}
+
+
+
 nav{
     display: flex;
     justify-content: space-between;
