@@ -3,6 +3,9 @@ const progress = document.querySelector("#progress");
 const completed = document.querySelector("#completed");
 
 //first render...........
+localStorage.setItem("todo" , JSON.stringify([]));
+localStorage.setItem("inProgress" , JSON.stringify([]));
+localStorage.setItem("completed" , JSON.stringify([]));
 
 const renderaAll = ()=>{
     let tododata = JSON.parse(localStorage.getItem("todo"))
@@ -119,6 +122,8 @@ function addingDragEvents(clm){
         clm.classList.remove("on-hover");
         counting();
         modifyCol();
+        console.log("droped");
+        
 
     })
 }
@@ -170,7 +175,6 @@ newtaskdet.addEventListener("submit" , (e)=>{
     
     out.addEventListener("dragstart" , ()=>{
         dragedEle = out;
-        console.log(dragedEle);
         dragedEle.style.opacity = "1";
     });
     
@@ -184,3 +188,14 @@ newtaskdet.addEventListener("submit" , (e)=>{
    document.querySelector("#newtaskDetOut").classList.add("hide");
 })
 
+// Deleting all tasks
+
+const deltask = document.querySelector("#deltask");
+deltask.addEventListener("click" , ()=>{
+    console.log(document.querySelectorAll(".bottom"));
+    document.querySelectorAll(".bottom").forEach((ele)=>{
+        ele.innerHTML = "";
+    });
+    modifyCol()
+    counting();
+})
