@@ -3,9 +3,15 @@ const progress = document.querySelector("#progress");
 const completed = document.querySelector("#completed");
 
 //first render...........
-localStorage.setItem("todo" , JSON.stringify([]));
-localStorage.setItem("inProgress" , JSON.stringify([]));
-localStorage.setItem("completed" , JSON.stringify([]));
+if (localStorage.getItem("todo") === null) {
+    localStorage.setItem("todo", JSON.stringify([]));
+}
+if (localStorage.getItem("inProgress") === null) {
+    localStorage.setItem("inProgress", JSON.stringify([]));
+}
+if (localStorage.getItem("completed") === null) {
+    localStorage.setItem("completed", JSON.stringify([]));
+}
 
 const renderaAll = ()=>{
     let tododata = JSON.parse(localStorage.getItem("todo"))

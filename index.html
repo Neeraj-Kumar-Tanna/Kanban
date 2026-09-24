@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanban</title>
+    <title>Kanban Board</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/png;base64,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">
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
@@ -18,7 +19,7 @@
             </form>
         </div>
         <nav>
-            <div>Kanban</div>
+            <div><h2>Kanban Board</h2></div>
             <div>
                 <button id="addtask">Add new Task</button>
                 <button id="deltask">Delete All Tasks</button>
@@ -32,48 +33,27 @@
                     <div>count</div>
                 </div>
                 <div class="bottom">
-                    <div draggable="true" class="task">
-                        <h3>Read Book</h3>
-                        <p>read telugu for 1 hour</p>
-                        <button>Delete</button>
-                    </div>
-                    <div draggable="true" class="task">
-                        <h3>Read Book</h3>
-                        <p>read telugu for 1 hour</p>
-                        <button>Delete</button>
-                    </div>
-                    <div draggable="true" class="task">
-                        <h3>Read Book</h3>
-                        <p>read telugu for 1 hour</p>
-                        <button>Delete</button>
-                    </div>
                     
                 </div>
             </div>
+
             <div id="progress" class="task-column">
                 <div class="heading">
                     <h5>In Progress</h5>
                     <div>count</div>
                 </div>
                 <div class="bottom">
-                    <div draggable="true" class="task">
-                        <h3>Read Book</h3>
-                        <p>read telugu for 1 hour</p>
-                        <button>Delete</button>
-                    </div>
+                    
                 </div>
             </div>
+
             <div id="completed" class="task-column">
                 <div class="heading">
                     <h5>Completed</h5>
                     <div>count</div>
                 </div>
                 <div class="bottom">
-                    <div draggable="true" class="task">
-                        <h3>Read Book</h3>
-                        <p>read telugu for 1 hour</p>
-                        <button>Delete</button>
-                    </div>
+                    
                 </div>
             </div>
         </section>
