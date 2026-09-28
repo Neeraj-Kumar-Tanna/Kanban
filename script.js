@@ -187,6 +187,7 @@ newtaskdet.addEventListener("submit" , (e)=>{
     out.querySelector("button").addEventListener("click" , ()=>{
         out.parentElement.removeChild(out);
         counting();
+        modifyCol();
     })
 
     modifyCol();
